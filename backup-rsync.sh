@@ -14,7 +14,7 @@
 #
 
 # Local directories to back up
-SRC="/home/anton/Documents /home/anton/Program /home/anton/Mail"
+SRC="/home/anton/Documents /home/anton/Music /home/anton/Program /home/anton/Mail"
 
 # Remote path to place backups
 DEST="/home/anton/Backups"
@@ -33,7 +33,7 @@ HOST="backuphost"
 
 date=$(date "+%Y-%m-%d_%H:%M:%S")
 
-rsync -axzP --link-dest="$CURRENT" $SRC "$HOST:$INCOMPLETE"
+rsync -axP --link-dest="$CURRENT" $SRC "$HOST:$INCOMPLETE"
 ssh $HOST "X=\$(cat $TIMESTAMP) && rm $TIMESTAMP && mv $CURRENT $DEST/\$X && mv $INCOMPLETE $CURRENT && echo $date > $TIMESTAMP"
 
 # TIP: If the timestamps have been messed up and you need to back up, use --checksum, otherwise everything will get re-copied
