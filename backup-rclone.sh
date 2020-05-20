@@ -2,7 +2,7 @@
 
 #
 # Backup script using rclone
-# Anton Lindström (anton@antonanton.com) 2017-09-21
+# Anton Lindström (anton at antonanton.com) 2017-09-21
 #
 # This script syncs LOCAL_CURRENT_DIR to REMOTE:REMOTE_CURRENT_DIR
 # This operation makes the contents of REMOTE:REMOTE_CURRENT_DIR identical to LOCAL_CURRENT_DIR
